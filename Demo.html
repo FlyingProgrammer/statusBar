@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+       body{
+        padding:50px;
+       }
+        #app1 {
+            width: 500px;
+            height: 20px;   
+        }
+        #app2 {
+            width: 500px;
+            height: 20px;   
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="app1">
+    </div>
+
+   
+    <script src="status-bar.js"></script>
+    <script>
+        window.onload = function () {
+            var data = [
+                { name: '正常运行', value: '1', begin: '2020-04-20 08:00:00', end: '2020-04-20 09:00:00', color: '#3DC62D' },
+                { name: '运行异常', value: '2', begin: '2020-04-20 09:00:00', end: '2020-04-20 12:00:00', color: '#FF8F28' },
+                { name: '停机', value: '3', begin: '2020-04-20 12:00:00', end: '2020-04-20 15:00:00', color: '#AAAAAA' },]
+            var config = { elem: document.getElementById("app1"), data: data }
+            config.click=function(){
+                alert(arguments[1].value)
+            }
+            var statusbar1 = new StatusBar(config);
+        }
+    </script>
+</body>
+
+</html>
